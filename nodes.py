@@ -26,5 +26,4 @@ class _:
 
 
     def format_float_array(*args):
-        print(args)
         return ", ".join(f"{i}: ({x:.2f})" for i, x in enumerate(args))
