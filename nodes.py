@@ -12,7 +12,7 @@ def register_node(identifier: str, display_name: str):
 
     return decorator
 
-@register_node("FloatArrayToPointString", "Point String from float array")
+@register_node("PointStringFromFloatArray", "Point String from Float Array")
 class _:
     CATEGORY = "visuallabs"
     INPUT_TYPES = lambda: {
@@ -26,7 +26,7 @@ class _:
     FUNCTION = "format_float_array"
 
 
-    def format_float_array(float_array):
+    def format_float_array(self, float_array):
 
         if float_array is None:
             raise ValueError("Float array must be provided.")
