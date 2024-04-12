@@ -19,7 +19,6 @@ class _:
         "required": {
             "float_array": ("FLOAT", {"array": True}),
         },
-
     }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("point_string",)
