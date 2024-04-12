@@ -17,7 +17,7 @@ class _:
     CATEGORY = "visuallabs"
     INPUT_TYPES = lambda: {
         "required": {
-            "float_array": { "float_array" : ("STRING", {}) },
+            "float_array": ("FLOAT",)
         }
     }
     RETURN_TYPES = ("STRING",)
@@ -26,4 +26,5 @@ class _:
 
 
     def format_float_array(float_array):
-      return ", ".join(f"{i}: ({x:.2f})" for i, x in enumerate(float_array))
+        print(float_array)
+        return ", ".join(f"{i}: ({x:.2f})" for i, x in enumerate(float_array))
