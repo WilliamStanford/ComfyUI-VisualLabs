@@ -20,7 +20,7 @@ class _:
             "required": { "float_array" : ("STRING", {}) },
         }
     }
-    RETURN_TYPES = ("STRING_LIST",)
+    RETURN_TYPES = ("STRING", {"default": "0:(0.0),\n7:(1.0),\n15:(0.0)\n", "multiline": True})
     RETURN_NAMES = ("point_string",)
     FUNCTION = "format_float_array"
 
