@@ -17,10 +17,10 @@ class _:
     CATEGORY = "visuallabs"
     INPUT_TYPES = lambda: {
         "required": {
-            "required": { "float_array" : ("STRING", {}) },
+            "float_array": { "float_array" : ("STRING", {}) },
         }
     }
-    RETURN_TYPES = ("STRING", {"default": "0:(0.0),\n7:(1.0),\n15:(0.0)\n", "multiline": True})
+    RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("point_string",)
     FUNCTION = "format_float_array"
 
