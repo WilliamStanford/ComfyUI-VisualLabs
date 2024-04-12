@@ -25,6 +25,6 @@ class _:
     FUNCTION = "format_float_array"
 
 
-    def format_float_array(float_array):
-        print(float_array)
-        return ", ".join(f"{i}: ({x:.2f})" for i, x in enumerate(float_array))
+    def format_float_array(*args):
+        print(args)
+        return ", ".join(f"{i}: ({x:.2f})" for i, x in enumerate(args))
