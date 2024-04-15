@@ -23,10 +23,10 @@ class _:
     }
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("point_string",)
-    FUNCTION = "format_float_array"
+    FUNCTION = "format_point_string_from_float_array"
 
 
-    def format_float_array(self, float_array):
+    def format_point_string_from_float_array(self, float_array):
 
         if float_array is None:
             raise ValueError("Float array must be provided.")
@@ -36,5 +36,31 @@ class _:
             float_array = np.array([float_array])
 
         point_string = ",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
+        print(point_string)
+        return point_string
+
+@register_node("StringFromFloatArray", "String from Float Array")
+class _:
+    CATEGORY = "visuallabs"
+    INPUT_TYPES = lambda: {
+        "required": {
+            "float_array": ("FLOAT", {"array": True}),
+        },
+    }
+    RETURN_TYPES = ("STRING",)
+    RETURN_NAMES = ("string",)
+    FUNCTION = "format_string_from_float_array"
+
+
+    def format_string_from_float_arrayy(self, float_array):
+
+        if float_array is None:
+            raise ValueError("Float array must be provided.")
+
+        # Convert a single float into a one-element array
+        if not isinstance(float_array, np.ndarray):
+            float_array = np.array([float_array])
+
+        point_string = ", ".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
         print(point_string)
         return point_string
