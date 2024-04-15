@@ -1,9 +1,9 @@
 import numpy as np
 import torch
 
+
 NODE_CLASS_MAPPINGS = {}
 NODE_DISPLAY_NAME_MAPPINGS = {}
-
 
 def register_node(identifier: str, display_name: str):
     def decorator(cls):
@@ -41,6 +41,7 @@ class _:
         print(point_string)
         return point_string
 
+
 @register_node("StringFromFloatArray", "String from Float Array")
 class _:
     CATEGORY = "visuallabs/array_handling"
@@ -56,7 +57,7 @@ class _:
     see: https://github.com/FizzleDorf/ComfyUI_FizzNodes/wiki/Prompt-Schedules """
 
 
-    def format_string_from_float_arrayy(self, float_array):
+    def format_string_from_float_array(self, float_array):
 
         if float_array is None:
             raise ValueError("Float array must be provided.")
@@ -70,8 +71,11 @@ class _:
         return point_string
 
 
-@register_node("CreateFadeMask", "create fade mask")
+
+@register_node("CreateFadeMaskAdvanced", "create fade mask")
 class _:
+    # Original source code here: https://github.com/kijai/ComfyUI-KJNodes/blob/main/nodes.py
+    # Only modification was to increase the max number of masks that can be generated
     CATEGORY = "visuallabs/masking/generate"
     INPUT_TYPES = lambda: {
         "required": {
