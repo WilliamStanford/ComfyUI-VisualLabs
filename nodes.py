@@ -117,7 +117,9 @@ and interpolating from that to fully black at the 16th frame.
         # Parse the input string into a list of tuples
         points = []
         points_string = points_string.rstrip('\n')
+        print(point_string[0])
         for point_str in points_string.split(','):
+            print(point_str)
             frame_str, color_str = point_str.split(':')
             frame = int(frame_str.strip())
             color = float(color_str.strip()[1:-1])  # Remove parentheses around color
