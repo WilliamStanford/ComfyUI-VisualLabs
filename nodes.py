@@ -37,6 +37,7 @@ class _:
         if not isinstance(float_array, np.ndarray):
             float_array = np.array([float_array])
 
+        print(scale*float_array)
         return (scale*float_array,)
         
 @register_node("PointStringFromFloatArray", "Point String from Float Array")
@@ -92,7 +93,7 @@ class _:
             float_array = np.array([float_array])
 
         point_string = ", ".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
-
+        print(point_string)
         return (point_string,)
 
 
