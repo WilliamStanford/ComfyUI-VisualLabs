@@ -72,7 +72,7 @@ class _:
 
 
 
-@register_node("CreateFadeMaskAdvanced", "create fade mask")
+@register_node("CreateFadeMaskAdvancedVL", "create fade mask")
 class _:
     # Original source code here: https://github.com/kijai/ComfyUI-KJNodes/blob/main/nodes.py
     # Only modification was to increase the max number of masks that can be generated
