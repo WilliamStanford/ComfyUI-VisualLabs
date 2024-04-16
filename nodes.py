@@ -38,7 +38,16 @@ class _:
             float_array = np.array([float_array])
 
         print(scale*float_array)
-        return (scale*float_array,)
+
+        if type(float_array) in {int, float, np.float64}:
+            print('setting to weird tuple')
+            float_array = tuple([float_array] * max_frames)
+        else:
+            print('Saving as default array')
+            print('printing first value')
+            print(float_array[0])
+        
+        return (tuple(scale*float_array),)
         
 @register_node("PointStringFromFloatArray", "Point String from Float Array")
 class _:
