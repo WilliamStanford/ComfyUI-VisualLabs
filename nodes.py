@@ -37,8 +37,7 @@ class _:
         if not isinstance(float_array, np.ndarray):
             float_array = np.array([float_array])
 
-        point_string = r",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
-        print(point_string)
+        point_string = str(r",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array)))
         return point_string
 
 
@@ -117,8 +116,10 @@ and interpolating from that to fully black at the 16th frame.
         
         # Parse the input string into a list of tuples
         points = []
-        points_string = points_string.rstrip('\n')
         print(points_string)
+        
+        points_string = points_string.rstrip('\n')
+        
         for point_str in points_string.split(','):
             print(point_str)
             frame_str, color_str = point_str.split(':')
