@@ -14,6 +14,32 @@ def register_node(identifier: str, display_name: str):
 
     return decorator
 
+@register_node("RescaleFloatArray", "Rescale Float Array")
+class _:
+    CATEGORY = "visuallabs/array_handling"
+    INPUT_TYPES = lambda: {
+        "required": {
+            "float_array": ("FLOAT", {"array": True}),
+            "scale": ("Float",),
+        },
+    }
+    RETURN_TYPES = ("FLOAT",)
+    RETURN_NAMES = ("float_array",)
+    FUNCTION = "format_point_string_from_float_array"
+    DESCRIPTION = """ Convert float array into a point_string that can be used for fade masks in ComfyUI_KJNodes \n
+    see "CreateFadeMaskAdvanced" in: https://github.com/kijai/ComfyUI-KJNodes/blob/main/nodes.py"""
+
+    def rescale_float_array(self, scale, float_array):
+
+        if float_array is None:
+            raise ValueError("Float array must be provided.")
+
+        # Convert a single float into a one-element array
+        if not isinstance(float_array, np.ndarray):
+            float_array = np.array([float_array])
+
+        return (scale*float_array,)
+        
 @register_node("PointStringFromFloatArray", "Point String from Float Array")
 class _:
     CATEGORY = "visuallabs/array_handling"
