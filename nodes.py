@@ -37,7 +37,8 @@ class _:
         if not isinstance(float_array, np.ndarray):
             float_array = np.array([float_array])
 
-        point_string = str(r",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array)))
+        point_string = r",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
+        
         return point_string
 
 
@@ -66,6 +67,7 @@ class _:
             float_array = np.array([float_array])
 
         point_string = ", ".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
+        point_string = "'" + point_string + "'"
         return point_string
 
 
