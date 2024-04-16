@@ -25,9 +25,8 @@ class _:
     }
     RETURN_TYPES = ("FLOAT",)
     RETURN_NAMES = ("float_array",)
-    FUNCTION = "format_point_string_from_float_array"
-    DESCRIPTION = """ Convert float array into a point_string that can be used for fade masks in ComfyUI_KJNodes \n
-    see "CreateFadeMaskAdvanced" in: https://github.com/kijai/ComfyUI-KJNodes/blob/main/nodes.py"""
+    FUNCTION = "rescale_float_array"
+    DESCRIPTION = """ returns a float array multiplied by a scale value """
 
     def rescale_float_array(self, scale, float_array):
 
