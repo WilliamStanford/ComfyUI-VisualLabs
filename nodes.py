@@ -38,7 +38,8 @@ class _:
             float_array = np.array([float_array])
 
         point_string = r",\n".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
-        
+        point_string = "'" + point_string + "'"
+        print(point_string)
         return point_string
 
 
@@ -68,6 +69,7 @@ class _:
 
         point_string = ", ".join(f"{i}:({x:.2f})" for i, x in enumerate(float_array))
         point_string = "'" + point_string + "'"
+        print(point_string)
         return point_string
 
 
