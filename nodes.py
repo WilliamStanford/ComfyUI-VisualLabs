@@ -25,7 +25,7 @@ class _:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("point_string",)
     FUNCTION = "format_point_string_from_float_array"
-    DESCRIPTION """ Convert float array into a point_string that can be used for fade masks in ComfyUI_KJNodes \n
+    DESCRIPTION = """ Convert float array into a point_string that can be used for fade masks in ComfyUI_KJNodes \n
     see "CreateFadeMaskAdvanced" in: https://github.com/kijai/ComfyUI-KJNodes/blob/main/nodes.py"""
 
     def format_point_string_from_float_array(self, float_array):
@@ -53,7 +53,7 @@ class _:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("string",)
     FUNCTION = "format_string_from_float_array"
-    DESCRIPTION """ Convert float array into a string that can be used for prompt schedules in ComfyUI_FizzNodes \n
+    DESCRIPTION = """ Convert float array into a string that can be used for prompt schedules in ComfyUI_FizzNodes \n
     see: https://github.com/FizzleDorf/ComfyUI_FizzNodes/wiki/Prompt-Schedules """
 
 
